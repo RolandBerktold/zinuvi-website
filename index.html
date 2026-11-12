@@ -46,6 +46,12 @@
   a:focus-visible { outline: 3px solid var(--unterstrich); outline-offset: 3px; border-radius: 4px; }
   .small { font-size: 0.95rem; color: var(--leise); }
   .person { display: flex; gap: 1.25rem; align-items: flex-start; background: var(--flaeche); border: 1px solid var(--linie); border-radius: 1rem; padding: 1.25rem; }
+  /* So sieht ZINUVI aus: drei Ansichten nebeneinander; auf schmalen Bildschirmen seitlich wischen */
+  .ansichten { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 0 0 1rem; }
+  .ansichten figure { margin: 0; }
+  .ansichten img { display: block; width: 100%; height: auto; }
+  .ansichten figcaption { font-size: 0.95rem; color: var(--leise); text-align: center; margin-top: 0.4rem; line-height: 1.35; }
+  @media (max-width: 30rem) { .ansichten { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 0.5rem; } .ansichten figure { scroll-snap-align: center; } }
   .portrait { flex: 0 0 auto; width: 7rem; height: 7rem; border-radius: 50%; object-fit: cover; object-position: 50% 30%; border: 3px solid var(--linie); }
   .person .text p:last-child { margin-bottom: 0; }
   @media (max-width: 30rem) { .person { flex-direction: column; align-items: center; } .person .text { text-align: left; } }
@@ -72,6 +78,27 @@
   <p>ZINUVI zeigt, was du in deiner Umgebung jetzt oder später wirklich unternehmen kannst: Veranstaltungen, Ausflugsziele, Gastronomie, Kultur und Freizeit in Deutschland, Österreich, der Schweiz und Liechtenstein.</p>
 
   <p>ZINUVI ist in Entwicklung. Die App wird kostenlos sein, ohne Konto und ohne Tracking.</p>
+
+  <h2>So sieht ZINUVI aus</h2>
+
+  <p>Ein Entwurf mit echten Inhalten aus Liechtenstein: Was am Samstagabend, 14. November, zwischen 17 und 23 Uhr stattfindet oder geöffnet hat – auf der Landkarte, als einzelner Eintrag und als Liste.</p>
+
+  <div class="ansichten">
+    <figure>
+      <img src="ansichten/1_landkarte_samstagabend.webp" width="600" height="1206" loading="lazy" alt="ZINUVI auf dem Handy: Landkarte von ganz Liechtenstein mit Pins und Gruppen für Samstagabend. Oben die Auswahl: Liechtenstein, Samstag 14.11., 17 bis 23 Uhr, Alles.">
+      <figcaption>Alles auf einen Blick</figcaption>
+    </figure>
+    <figure>
+      <img src="ansichten/2_fokus_tak_schaan.webp" width="600" height="1206" loading="lazy" alt="Ausschnitt um Schaan: Ein angetippter Pin ist vergrößert, unten seine Card: Umbilical Brothers im TAK Theater Liechtenstein, Samstag 19:30, mit Bild.">
+      <figcaption>Ein Eintrag mit Zeit, Ort und Bild</figcaption>
+    </figure>
+    <figure>
+      <img src="ansichten/3_liste_samstagabend.webp" width="600" height="1206" loading="lazy" alt="Dieselbe Auswahl als Liste: 30 Möglichkeiten, oben 8 Termine mit Uhrzeit und Ort, etwa Rollschuh Disco in Mauren und Herbstkonzert im Dorfsaal Triesenberg.">
+      <figcaption>Dasselbe als Liste</figcaption>
+    </figure>
+  </div>
+
+  <p class="small">Entwurf mit echten Inhalten aus Liechtenstein; Gestaltung und Funktionen können sich bis zum Start noch ändern. Landkarte © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · Bilder: Liechtenstein Marketing</p>
 
   <h2>Für Veranstalter, Lokale und Museen</h2>
 
